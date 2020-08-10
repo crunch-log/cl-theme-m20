@@ -1,12 +1,11 @@
-# Theme: Simple
+# Theme: Default
 
 Theme for [CrunchLog](https://nullbit.se/crunchlog).
 
 ## Setup for Build
 
 ```bash
-pnpm install -g gulp-cli
-pnpm install
+N/A
 ```
 
 ## Build
@@ -14,11 +13,11 @@ pnpm install
 ### Build once
 
 ```bash
-gulp less
+N/A
 ```
 
 ### Build during development
 
 ```bash
-gulp watch
+N/A
 ```
