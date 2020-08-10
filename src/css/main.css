@@ -1,0 +1,96 @@
+:root {
+  --fore-color: hsl(0, 0%, 10%);
+  --back-color: hsl(0, 0%, 98%);
+  --alt-color: hsl(0, 0%, 50%);
+  --font-size: 16px;
+  --font-family: Arial, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--fore-color); 
+  background: var(--back-color); 
+}
+
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+footer {
+  font-size: 75%;
+  color: var(--alt-color); 
+}
+
+header.main {
+  background: var(--fore-color);
+  color: var(--back-color);
+}
+
+header.main > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.main > div, main, nav.pagination {
+  width: 80%;
+  max-width: 96ch;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  
+}
+
+div.title, nav.mainmenu {
+  display: inline-block;
+}
+
+div.title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+nav.mainmenu li {
+  padding-left: 1em;
+}
+
+article {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+h1 {
+  margin: 0.1em 0 0.2em 0;
+  font-size: 1.8em;
+}
+
+section.list article h1 {
+  font-size: 1.4em;;
+}
+
+div.pagination {
+  text-align: center;
+}
+
+footer.main {
+  text-align: center;
+  margin-bottom: 2em;
+}

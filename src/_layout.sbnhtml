@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.Meta.Language }}">
+
+<head>
+  <title>{{ model.Title }} | {{ site.Title }}</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/css/main.css" media="all">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header class="main">
+    <div>
+    <div class="title">{{ site.Title }}</div>
+    <nav class="mainmenu">
+      <ul>
+      {{ for item in site.Menu["main"] }}
+        <li><a href="{{ item.Url }}">{{ item.Title }}</a></li>
+      {{ end }}
+      </ul>
+    </nav>
+    </div>
+  </header>
+  <main>
+    {{ body }}
+  </main>
+  <footer class="main">
+    <div>Copyright &copy; {{ site.CopyrightYear }} {{ if site.CopyrightYear < year }} - {{ year }} {{ end }} {{ site.Owner }}. All Rights Resered.</div>
+    <div>Powered By CrunchLog</div>
+  </footer>
+</body>
+</html>

@@ -1,16 +1,16 @@
 ﻿{
-	"id": "Bit0.CrunchLog.Themes.Simple.Scriban",
-    "name": "Simple (Scriban)",
-    "version": "{version}",
-    "description": "A SIMPLE theme for Crunchlog.",
-    "homepage": "https://nullbit.se/crunchlog/themes/simple-scriban",
+	"id": "Bit0.CrunchLog.Themes.Simple.Default",
+    "name": "Default",
+    "version": "1.0",
+    "description": "Default theme for Crunchlog.",
+    "homepage": "https://nullbit.se/crunchlog/themes/default",
   
     "license": {
         "name": "CC BY-SA 4.0",
         "link": "http://creativecommons.org/licenses/by-sa/4.0/"
     },
   
-    "tags": [ "theme", "simple", "crunchlog", "blog", "multi-pager", "scriban" ],  
+    "tags": [ "theme", "crunchlog", "blog", "multi-pager", "scriban" ],
     "features": [ "blog", "post", "page", "scriban" ],
   
     "author": {
@@ -29,7 +29,7 @@
     "output": {
         "content": "/data",
         "copy": {
-            "dirs": ["css", "js"],
+            "dirs": ["css"],
             "files": [ ]
         }
     }

@@ -1,0 +1,26 @@
+{{ 
+    layoutType = 'post'
+    post = model
+    category = site.Categories[model.DefaultCategory]
+    author = site.Authors[model.Author]
+}}
+
+{{ capture body }}
+<article>
+  <footer>
+    <time class="date" datetime="{{ post.Published | date.to_string `%FT%T%Z` }}" title="{{ post.Published | date.to_string `%A, %B %d, %Y %R %Z` }}">
+      <span>{{ post.Published | date.to_string `%B %d, %Y %R` }}</span>
+    </time> | 
+    <a class="category" href="{{ category.Url }}">{{ category.Title }}</a>
+  </footer>
+  <header><h1><a href="{{ post.Permalink }}">{{ post.Title }}</a></h1></header>
+  <div class="intro">
+    {{ post.Description | string.truncate 360 }}
+  </div>
+  <div class="content">
+    {{ post.Content }}
+  </div>
+</article>
+{{ end }}
+
+{{ include '_layout' 'post' }}
