@@ -37,7 +37,7 @@ jobs:
       id: create_artifect
       uses: montudor/action-zip@v0.1.0
       with: 
-        args: zip -qq -r  ${{ env.PACKAGE_NAME }}.zip ./dist
+        args: zip -qq -r -j  ${{ env.PACKAGE_NAME }}.zip ./dist
     
     - name: Upoad Artifect
       id: upload_artifects
