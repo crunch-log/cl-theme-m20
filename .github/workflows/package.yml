@@ -1,0 +1,52 @@
+name: Package Theme
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    
+    stesp:
+    - uses: actions/checkout@v2
+    
+    - name: Set Version
+      id: set_version
+      run: |
+        echo "::set-env name=PACKAGE_VERSION::1.0.$GITHUB_RUN_NUMBER"
+        echo "::set-env name=PACKAGE_NAME::theme-default-1.0.$GITHUB_RUN_NUMBER"
+    
+    - name: Package
+      id: package
+      run: |
+        mkdir dist
+        cp -R ./src/* ./dist/
+        cp pack.json ./dist/
+        sed -i "s/{version}/$PACKAGEVERSION/g" "./dist/pack.json"
+    
+    - name: Create artifact
+      id: create_artifect
+      uses: montudor/action-zip@v0.1.0
+      with: 
+        args: zip -qq -r  ${{ env.PACKAGE_NAME }}.zip ./dist
+    
+    - name: Upoad Artifect
+      id: upload_artifects
+      uses: actions/upload-artifact@master
+      with:
+        name: ${{ env.PACKAGE_NAME }}
+        path: ${{ env.PACKAGE_NAME }}.zip
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.PACKAGE_NAME }}
+        release_name: Release ${{ env.PACKAGE_NAME }}
+        body: "Theme"
+        draft: false
+        prerelease: false
