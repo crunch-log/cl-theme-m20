@@ -9,8 +9,13 @@ jobs:
   package:
     runs-on: ubuntu-latest
     
-    stesp:
-    - uses: actions/checkout@v2
+    steps:
+    - name: Clean workspace
+      run: |
+        rm -Rf dist/
+
+    - name: Checkout code
+      uses: actions/checkout@v2
     
     - name: Set Version
       id: set_version
@@ -22,9 +27,11 @@ jobs:
       id: package
       run: |
         mkdir dist
-        cp -R ./src/* ./dist/
-        cp pack.json ./dist/
-        sed -i "s/{version}/$PACKAGEVERSION/g" "./dist/pack.json"
+        ls -Al
+        pwd
+        cp -R src/* dist/
+        cp pack.json dist/
+        sed -i "s/{version}/$PACKAGEVERSION/g" "dist/pack.json"
     
     - name: Create artifact
       id: create_artifect
