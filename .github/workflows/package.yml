@@ -57,3 +57,14 @@ jobs:
         body: "Theme"
         draft: false
         prerelease: false
+    
+    - name: Upload Release
+      id: upload_release 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./${{ env.PACKAGE_NAME }}.zip
+        asset_name: ${{ env.PACKAGE_NAME }}.zip
+        asset_content_type: application/zip
