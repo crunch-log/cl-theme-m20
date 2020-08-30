@@ -31,7 +31,7 @@ jobs:
         pwd
         cp -R src/* dist/
         cp pack.json dist/
-        sed -i "s/{version}/$PACKAGEVERSION/g" "dist/pack.json"
+        sed -i "s/{version}/$PACKAGE_VERSION/g" "dist/pack.json"
     
     - name: Create artifact
       id: create_artifect
