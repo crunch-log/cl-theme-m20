@@ -3,6 +3,9 @@ name: Package Theme
 on:
   push:
     branches: [ master ]
+    paths:
+    - "src/**"
+    - "pack.json"
   workflow_dispatch:
 
 jobs:
@@ -52,8 +55,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ env.PACKAGE_NAME }}
-        release_name: Release ${{ env.PACKAGE_NAME }}
+        tag_name: v${{ env.PACKAGE_VERSION }}
+        release_name: Release v${{ env.PACKAGE_VERSION }}
         body: "Theme"
         draft: false
         prerelease: false
