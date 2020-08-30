@@ -36,6 +36,12 @@ jobs:
         cp pack.json dist/
         sed -i "s/{version}/$PACKAGE_VERSION/g" "dist/pack.json"
     
+    - name: Generate Changelog
+      id: changelog
+      uses: scottbrenner/generate-changelog-action@master
+      env:
+        REPO: ${{ github.repository }}
+    
     - name: Create artifact
       id: create_artifect
       uses: montudor/action-zip@v0.1.0
@@ -57,7 +63,8 @@ jobs:
       with:
         tag_name: v${{ env.PACKAGE_VERSION }}
         release_name: Release v${{ env.PACKAGE_VERSION }}
-        body: "Theme"
+        body: |
+          ${{ steps.changelog.outputs.changelog }}
         draft: false
         prerelease: false
     
