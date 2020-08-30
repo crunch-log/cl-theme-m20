@@ -1,4 +1,6 @@
-# Theme: Default
+# Theme: m20
+
+Minimal theme for CrunchLog
 
 Theme for [CrunchLog](https://nullbit.se/crunchlog).
 
