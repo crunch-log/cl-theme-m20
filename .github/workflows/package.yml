@@ -21,7 +21,7 @@ jobs:
       id: set_version
       run: |
         echo "::set-env name=PACKAGE_VERSION::1.0.$GITHUB_RUN_NUMBER"
-        echo "::set-env name=PACKAGE_NAME::theme-default-1.0.$GITHUB_RUN_NUMBER"
+        echo "::set-env name=PACKAGE_NAME::theme-m20-1.0.$GITHUB_RUN_NUMBER"
     
     - name: Package
       id: package

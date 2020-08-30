@@ -1,8 +1,8 @@
 ﻿{
-	"id": "Bit0.CrunchLog.Themes.Simple.Default",
-    "name": "Default",
+	"id": "Bit0.CrunchLog.Themes.m20",
+    "name": "m20",
     "version": "{version}",
-    "description": "Default theme for Crunchlog.",
+    "description": "m20 minimal theme for Crunchlog.",
     "homepage": "https://nullbit.se/crunchlog/themes/default",
   
     "license": {
@@ -10,8 +10,8 @@
         "link": "http://creativecommons.org/licenses/by-sa/4.0/"
     },
   
-    "tags": [ "theme", "crunchlog", "blog", "multi-pager", "scriban" ],
-    "features": [ "blog", "post", "page", "scriban" ],
+    "tags": [ "theme", "crunchlog", "blog", "multi-pager", "minimal" ],
+    "features": [ "blog", "post", "page", "scriban", "minimal" ],
   
     "author": {
         "name": "Ishan Jain",
