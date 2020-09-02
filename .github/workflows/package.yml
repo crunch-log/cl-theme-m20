@@ -24,7 +24,7 @@ jobs:
       id: set_version
       run: |
         echo "::set-env name=PACKAGE_VERSION::1.0.$GITHUB_RUN_NUMBER"
-        echo "::set-env name=PACKAGE_NAME::theme-m20-1.0.$GITHUB_RUN_NUMBER"
+        echo "::set-env name=PACKAGE_NAME::theme-m20"
     
     - name: Package
       id: package
@@ -52,7 +52,7 @@ jobs:
       id: upload_artifects
       uses: actions/upload-artifact@master
       with:
-        name: ${{ env.PACKAGE_NAME }}
+        name: ${{ env.PACKAGE_NAME }} v${{ env.PACKAGE_VERSION }}
         path: ${{ env.PACKAGE_NAME }}.zip
       
     - name: Create Release
