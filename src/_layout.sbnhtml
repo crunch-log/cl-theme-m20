@@ -25,7 +25,7 @@
   </main>
   <footer class="main">
     <div>Copyright &copy; {{ site.CopyrightYear }} {{ if site.CopyrightYear < year }} - {{ year }} {{ end }} {{ site.Owner }}. All Rights Resered.</div>
-    <div>Powered By CrunchLog</div>
+    <div>Powered By <a href="https://github.com/crunch-log/CrunchLog/" rel="external" target="_blank">CrunchLog</a>. Theme <a href="https://github.com/crunch-log/theme-m20/" rel="external" target="_blank">m20</a></div>
   </footer>
 </body>
 </html>
